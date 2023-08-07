@@ -2,6 +2,8 @@
 
 Testing REST ServiceNow APIs using JMeter offers a powerful approach to validate the functionality and performance of the ServiceNow platform. Leveraging JMeter, a test scenario has been created to evaluate API endpoints, authentication mechanisms, data retrieval, and overall system responsiveness. JMeter identifies potential bottlenecks and performance issues by simulating real-world user interactions and load conditions, enabling teams to fine-tune the APIs for optimal efficiency. With its flexibility and ability to generate insightful reports, JMeter is an indispensable tool in ensuring the reliability and scalability of REST ServiceNow APIs, enhancing the overall user experience and boosting the platform's capabilities.
 
+Visit [ServiceNow Report](https://servicenow-performance.netlify.app/) to see the generatad report.
+
 This is a step-by-step guide to test the performance of ServiceNow APIs.
 
 # How to Conduct the Performance Testing
