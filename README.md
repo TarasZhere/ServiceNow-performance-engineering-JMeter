@@ -4,18 +4,33 @@ Testing REST ServiceNow APIs using JMeter offers a powerful approach to validate
 
 This is an step-by-step guide to test performance of ServiceNow APIs.
 
-## Performance Testing
+# Performance Testing
 
 The performance testing involves the following APIs:
 
-<center>
+|     API Label      |      ServiceNow API      |                                                    Documentation link                                                    | Method | Parameters |
+| :----------------: | :----------------------: | :----------------------------------------------------------------------------------------------------------------------: | :----: | :--------: |
+| **Incident Table** | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   |     0      |
+|   **sys_user1**    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   |     1      |
+|   **sys_user2**    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   |     2      |
+|   **sys_user3**    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   |     3      |
+|   **post_user**    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-POST?navFilter=table) |  POST  |     0      |
 
-|    API Label     |           API            |                                                    Documentation link                                                    | Method | Parameter |
-| :--------------: | :----------------------: | :----------------------------------------------------------------------------------------------------------------------: | :----: | --------- |
-| `Incident Table` | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   | 0         |
-|   `sys_user1`    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   | 1         |
-|   `sys_user2`    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   | 2         |
-|   `sys_user3`    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET?navFilter=table)  |  GET   | 3         |
-|   `post_user`    | `api/now/table/incident` | [incident API](https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-POST?navFilter=table) |  POST  | 0         |
+## 1) Download JMX file to perform the test
 
-</center>
+[Download JMX File](./ServiceNow.jmx)
+or clone the repository with the provided ServiceNow.jmx
+
+## 2) Install JMeter
+
+Use the commands (in order) to install the software using `homebrew`
+
+1. `brew -update`
+2. `brew -upgrade`
+3. `brew install jmeter`
+
+or reference the original documentation @ [JMeter.com](https://jmeter.apache.org/download_jmeter.cgi)
+
+## 3) Run the test
+
+`jmeter -n -t <path>/ServiceNow.jmx -l <path of where you want to store the rusulting file>/ServiceNow.csv -e -o <Path to output folder>`
