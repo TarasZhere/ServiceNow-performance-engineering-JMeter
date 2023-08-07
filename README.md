@@ -20,7 +20,7 @@ The performance testing involves the following APIs:
 
 This method is simple since you can use the shell file provided to run all the commands needed.
 The only requirements are that [homebrew](https://docs.brew.sh/Installation) is installed.
-After installing `homebrew,` open a terminal and follow the steps below.
+After installing `homebrew`, open a terminal and follow the steps below.
 
 ### 1. Clone this repository
 
@@ -36,14 +36,14 @@ After installing `homebrew,` open a terminal and follow the steps below.
 
 ### 4. Wait 15 minutes for the report
 
-Just wait for the time required to run the test (15 min), and as soon as the test is done, a folder `report` will appear in the directory with a `.html` file having a complete report of the examination.
+Just wait for the time required to run the test (15 min), and as soon as the test is done, a folder `report` will appear in the directory with inside a `.html` file displaying the complete report of the examination.
 
 ## Run the test (Method 2)
 
 ### 1. Download the JMX file to perform the test
 
 [Download JMX File](./ServiceNow.jmx)
-or clone the repository with the provided ServiceNow.jmx
+or clone the repository with the provided ServiceNow.jmx with `git clone https://github.com/TarasZhere/ServiceNow-performance-engineering-JMeter.git`
 
 ### 2. Install JMeter
 
@@ -54,7 +54,9 @@ or reference the original documentation @ [JMeter.com](https://jmeter.apache.org
 
 ### 3. Run the test
 
-`jmeter -n -t <path of>/ServiceNow.jmx -l < path: where you want to store the resulting file>/ServiceNow.csv -e -o < path to the output folder. (It must be an empty folder)>`
+`jmeter -n -t < path of ServiceNow.jmx from this repository> -l < path of where you want to store the resulting file>/ServiceNow.csv -e -o < path to the output folder. (It must be an empty folder)>`
+
+example: `jmeter -n -t ./ServiceNow.jmx -l ./ServiceNow.csv -e -o ./report/`
 
 ### 4. Wait 15 minutes for the report
 
